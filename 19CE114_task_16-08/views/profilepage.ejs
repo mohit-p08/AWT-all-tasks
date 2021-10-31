@@ -1,0 +1,118 @@
+<%- include('header') %>
+
+  <script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+      $('#datep').datepicker({
+        format: "dd/mm/yyyy"
+      });
+    });
+  </script>
+
+
+  <class class="container mainbox">
+    <div class="row justify-content-md-center">
+      <div class="col-12">
+        <h1>ENTER DETAILS</h1>
+      </div>
+
+      <div class="col-8" style="margin: 1rem;padding: 1rem;">
+        <form name="profile-form" action="/displayprofile" method="post" class="row g-2">
+          <div class="col-md-6">
+            <label for="first_name" class="form-label">First name</label>
+            <input type="text" class="form-control" name="firstName" id="first_name" maxlength="10" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="last_name" class="form-label">Last name</label>
+            <input type="text" name="lastName" class="form-control" id="last_name" maxlength="10" required>
+          </div>
+
+          <div class="col-md-8">
+            <label for="email" class="form-label">Email</label>
+            <div class="form-label">
+              <input type="text" name="email" class="form-control" id="email" pattern="[^ @]*@[^ @]*" maxlength="30"
+                aria-describedby="email" required oninvalid="setCustomValidity('Please enter valid Email.')"
+                onchange="try{setCustomValidity('')}catch(e){}">
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="mobile_number" class="form-label">Mobile Number</label>
+            <input type="text" name="mobile" class="form-control" id="mobile_number" max="10" pattern="[1-9]{1}[0-9]{9}"
+              aria-describedby="mobile_number" required oninvalid="setCustomValidity('Please enter 10 digits number.')"
+              onchange="try{setCustomValidity('')}catch(e){}">
+          </div>
+
+          <div class="col-md-6">
+            <label for="datep" class="form-label">Birth-Date</label>
+            <input class="form-control" name="birthDate" type="text" placeholder="click to select date" id="datep"
+              required>
+          </div>
+
+
+          <div class="col-md-6">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-select" name="gender" id="gender" aria-describedby="gender" required>
+              <option selected disabled value="">Choose</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="Textarea1">Address</label>
+            <textarea class="form-control" name="address" id="Textarea1" rows="3" maxlength="50" required></textarea>
+          </div>
+
+          <div class="col-md-4">
+            <label for="institute" class="form-label">Institute</label>
+            <select class="form-select" name="institute" id="institute" aria-describedby="institute" required>
+              <option selected disabled value="">Choose</option>
+              <option>CSPIT</option>
+              <option>DEPSTAR</option>
+              <option>IIIM</option>
+              <option>RPCP</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label for="department" class="form-label">Department</label>
+            <select class="form-select" name="department" id="department" aria-describedby="department" required>
+              <option selected disabled value="">Choose</option>
+              <option>CE</option>
+              <option>IT</option>
+              <option>CSE</option>
+              <option>EE</option>
+              <option>CL</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label for="sem" class="form-label">Semester</label>
+            <select class="form-select" name="sem" id="sem" aria-describedby="sem" required>
+              <option selected disabled value="">Choose</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+
+      </div>
+      </form>
+    </div>
+
+
+  </class>
